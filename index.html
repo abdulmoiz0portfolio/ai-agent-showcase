@@ -1,369 +1,616 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdul Moiz Baig — AI Automation & Agent Showcase</title>
-  <meta name="description" content="Production-ready AI agents, n8n automations, and deployed SaaS tools by Abdul Moiz Baig. Show me your work, not your CV.">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            accent: {
-              emerald: '#10b981',
-              cyan: '#06b6d4',
-              gold: '#f59e0b',
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="description" content="">
+    <link rel="canonical" href="https://automatixes.com/showcase">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Automatixes — AI Operations & Showcase">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://automatixes.com/showcase">
+    <meta property="og:image" content="assets/img/logo/automatixes-logo-new.png">
+
+    <!-- Theme Color matching Orwell Emerald Void -->
+    <meta name="theme-color" content="#012004">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orwell: {
+                            bg: '#012004',
+                            bgCard: '#022807',
+                            bgCardHover: '#03330a',
+                            border: '#1b5e20',
+                            neon: '#09da05',
+                            neonHover: '#0cf007',
+                            darkGreen: '#196a14',
+                            gold: '#f6c500',
+                            cream: '#f0f9f1',
+                            creamCard: '#e8f5e9'
+                        }
+                    },
+                    fontFamily: {
+                        poppins: ['"Poppins"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    }
+                }
             }
-          }
         }
-      }
-    }
-  </script>
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <style>
-    .glow-card:hover {
-      box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.2);
-    }
-    .glow-cyan:hover {
-      box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.2);
-    }
-    .badge-subtle {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-  </style>
+    </script>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome & Lucide Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #012004;
+            color: #ffffff;
+            selection-background-color: #196a14;
+        }
+        ::selection {
+            background-color: #196a14;
+            color: #ffffff;
+        }
+        .orwell-glow {
+            box-shadow: 0 0 50px -10px rgba(9, 218, 5, 0.25);
+        }
+        .orwell-glow-gold {
+            box-shadow: 0 0 50px -10px rgba(246, 197, 0, 0.25);
+        }
+        .btn-orwell-neon {
+            background: #09da05;
+            color: #012004;
+            font-weight: 700;
+            border-radius: 9999px;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 25px rgba(9, 218, 5, 0.35);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .btn-orwell-neon:hover {
+            background: #0cf007;
+            box-shadow: 0 0 35px rgba(9, 218, 5, 0.55);
+            transform: translateY(-2px);
+            color: #012004;
+        }
+        .btn-orwell-glass {
+            background: rgba(27, 94, 32, 0.2);
+            border: 1px solid rgba(27, 94, 32, 0.45);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .btn-orwell-glass:hover {
+            background: rgba(27, 94, 32, 0.35);
+            border-color: #09da05;
+            color: #09da05;
+            transform: translateY(-2px);
+        }
+        .frosted-light-card {
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(27, 94, 32, 0.2);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255, 255, 255, 0.6);
+            background: rgba(232, 245, 233, 0.95) !important;
+            color: #012004 !important;
+            transition: all 0.3s ease;
+        }
+        .frosted-light-card:hover {
+            border-color: rgba(27, 94, 32, 0.35);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.8);
+            background: rgba(240, 249, 241, 0.98) !important;
+            transform: translateY(-3px);
+        }
+        .card-orwell-dark {
+            background: rgba(2, 40, 7, 0.7);
+            border: 1px solid rgba(27, 94, 32, 0.35);
+            border-radius: 24px;
+            backdrop-filter: blur(14px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-orwell-dark:hover {
+            background: rgba(3, 51, 10, 0.9);
+            border-color: rgba(9, 218, 5, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 30px -5px rgba(9, 218, 5, 0.15);
+        }
+        .pulse-beacon {
+            animation: pulseBeacon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulseBeacon {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans selection:bg-emerald-500 selection:text-slate-950 antialiased">
+<body class="min-h-screen bg-[#012004] text-white flex flex-col antialiased selection:bg-[#196a14] selection:text-white">
 
-  <!-- Ambient Glow Effects -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-emerald-500/10 blur-[130px] rounded-full"></div>
-    <div class="absolute top-[35%] -left-32 w-[500px] h-[500px] bg-cyan-500/10 blur-[140px] rounded-full"></div>
-    <div class="absolute bottom-10 -right-32 w-[600px] h-[600px] bg-emerald-600/10 blur-[150px] rounded-full"></div>
-  </div>
-
-  <!-- Header -->
-  <header class="relative z-40 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center font-bold text-slate-950 text-lg shadow-lg shadow-emerald-500/20">
-          MB
-        </div>
-        <div>
-          <div class="font-bold text-base tracking-tight flex items-center gap-2">
-            <span>Abdul Moiz Baig</span>
-            <span class="text-[10px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Available</span>
-          </div>
-          <p class="text-xs text-slate-400">AI Automation Architect & Agent Builder</p>
-        </div>
-      </div>
-
-      <div class="flex items-center gap-2.5 sm:gap-4">
-        <a href="https://www.linkedin.com/in/a-moiz-baig/" target="_blank" class="p-2 sm:px-3.5 sm:py-2 rounded-lg badge-subtle hover:bg-white/10 text-slate-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-all">
-          <i data-lucide="linkedin" class="w-4 h-4 text-[#0a66c2]"></i>
-          <span class="hidden sm:inline">LinkedIn</span>
-        </a>
-        <a href="https://github.com/abdulmoiz0portfolio" target="_blank" class="p-2 sm:px-3.5 sm:py-2 rounded-lg badge-subtle hover:bg-white/10 text-slate-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-all">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span class="hidden sm:inline">GitHub</span>
-        </a>
-        <a href="https://automatixes.com/" target="_blank" class="px-3.5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold flex items-center gap-1.5 transition-all shadow-md shadow-emerald-500/20">
-          <i data-lucide="globe" class="w-4 h-4"></i>
-          <span>automatixes.com</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-    <div class="text-center max-w-3xl mx-auto space-y-5">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-xs font-medium text-slate-300 shadow-inner">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>Interactive AI Agents &amp; Automation Portfolio</span>
-      </div>
-
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
-        Autonomous AI Agents <br class="hidden sm:inline">
-        <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">&amp; Intelligent Automations.</span>
-      </h1>
-
-      <p class="text-base sm:text-lg text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
-        Explore and test production-ready <strong class="text-slate-200 font-semibold">conversational AI agents</strong>, high-speed <strong class="text-slate-200 font-semibold">Groq &amp; n8n workflows</strong>, and deployed <strong class="text-slate-200 font-semibold">SaaS tools</strong> built to automate business operations.
-      </p>
-
-      <!-- Key Metrics Strip -->
-      <div class="pt-3 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-mono text-slate-400">
-        <span class="badge-subtle px-3 py-1.5 rounded-lg flex items-center gap-1.5">
-          <i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-400"></i> &lt;650ms Inference via Groq
-        </span>
-        <span class="badge-subtle px-3 py-1.5 rounded-lg flex items-center gap-1.5">
-          <i data-lucide="git-branch" class="w-3.5 h-3.5 text-cyan-400"></i> Production n8n Workflows
-        </span>
-        <span class="badge-subtle px-3 py-1.5 rounded-lg flex items-center gap-1.5">
-          <i data-lucide="languages" class="w-3.5 h-3.5 text-amber-400"></i> English & Arabic Bilingual
-        </span>
-      </div>
+    <!-- Ambient Glowing Blurs (Exact Orwell Style) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#1b5e20]/25 rounded-full blur-[140px] opacity-70"></div>
+        <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#196a14]/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-0 w-80 h-80 bg-[#09da05]/10 rounded-full blur-3xl pointer-events-none"></div>
     </div>
 
-    <!-- Section 1: Featured Interactive Live Bots -->
-    <div class="mt-16 sm:mt-24 space-y-6">
-      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-        <div>
-          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2.5">
-            <i data-lucide="bot" class="w-6 h-6 text-emerald-400"></i>
-            Live Interactive AI Agents
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1">Click to chat with the deployed bots directly in your browser.</p>
+    <!-- Navigation Bar -->
+    <header class="relative z-40 border-b border-[#1b5e20]/30 bg-[#012004]/85 backdrop-blur-xl sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand & Identity -->
+            <div class="flex items-center gap-3.5">
+                <a href="/" class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#09da05] to-[#1b5e20] p-[1.5px] shadow-lg shadow-[#09da05]/20 flex items-center justify-center text-decoration-none">
+                    <div class="w-full h-full bg-[#012004] rounded-[14px] flex items-center justify-center font-extrabold text-white text-base">
+                        MB
+                    </div>
+                </a>
+                <div>
+                    <a href="/" class="font-bold text-base sm:text-lg tracking-tight text-white flex items-center gap-2 hover:text-[#09da05] transition-colors text-decoration-none">
+                        <span>Abdul Moiz Baig</span>
+                        <span class="w-2 h-2 rounded-full bg-[#09da05] pulse-beacon"></span>
+                    </a>
+                    <p class="text-[11px] text-[#09da05] uppercase tracking-wider font-semibold">AI Automation Architect • Automatixes</p>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
+                <a href="#agents" class="hover:text-[#09da05] transition-colors text-decoration-none">Interactive Bots</a>
+                <a href="#breakdowns" class="hover:text-[#09da05] transition-colors text-decoration-none">Workflow Videos</a>
+                <a href="#tools" class="hover:text-[#09da05] transition-colors text-decoration-none">SaaS Tools</a>
+                <a href="#about" class="hover:text-[#09da05] transition-colors text-decoration-none">About</a>
+                <a href="/" class="hover:text-[#09da05] transition-colors text-decoration-none">Agency Main</a>
+            </nav>
+
+            <!-- Action Controls -->
+            <div class="flex items-center gap-3">
+                <a href="https://www.linkedin.com/in/a-moiz-baig/" target="_blank" class="p-2 sm:px-3.5 sm:py-2 rounded-full btn-orwell-glass text-xs font-semibold text-white transition-all">
+                    <i class="fa-brands fa-linkedin text-[#09da05]"></i>
+                    <span class="hidden sm:inline">LinkedIn</span>
+                </a>
+                <a href="https://wa.me/923366920141" target="_blank" class="btn-orwell-neon px-4 sm:px-5 py-2 sm:py-2.5 text-xs uppercase tracking-wider font-bold">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Message WhatsApp</span>
+                </a>
+            </div>
         </div>
-      </div>
+    </header>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-        
-        <!-- Bot 1: Real Estate Qualification Agent -->
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-7 backdrop-blur-sm transition-all duration-300 glow-card flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex items-start justify-between">
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                <i data-lucide="home" class="w-6 h-6"></i>
-              </div>
-              <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-mono font-medium flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Live & Active
-              </span>
+    <!-- Main Content -->
+    <main class="relative z-10 flex-grow">
+
+        <!-- HERO SECTION (Orwell Inspired) -->
+        <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 text-center max-w-5xl mx-auto px-4 sm:px-6">
+            
+            <!-- Live Availability Pill -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#1b5e20]/25 border border-[#09da05]/30 text-xs font-medium text-[#09da05] mb-6 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-[#09da05] pulse-beacon"></span>
+                <span>Available for Enterprise AI &amp; Automation Architecture</span>
             </div>
 
-            <div>
-              <h3 class="text-lg sm:text-xl font-bold text-white">PropertyBot — Real Estate Lead Qualification</h3>
-              <p class="text-xs text-emerald-400 font-mono mt-0.5">PropTech AI Assistant</p>
-            </div>
+            <!-- Grand Headline -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.12] mb-6 text-white">
+                Autonomous AI Agents <br class="hidden sm:inline">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#09da05] via-[#4caf50] to-[#f6c500]">
+                    &amp; Intelligent Automations.
+                </span>
+            </h1>
 
-            <p class="text-sm text-slate-300 font-light leading-relaxed">
-              Solves the 5-minute lead drop problem where 80% of buyers abandon slow agencies. Powered by <strong class="text-white font-medium">Groq (Llama-3)</strong> for sub-second responses with conversation memory to retain budget, location preferences, and pre-approval status.
+            <!-- Subtitle -->
+            <p class="text-base sm:text-xl text-white/80 font-light leading-relaxed max-w-3xl mx-auto mb-8">
+                Eliminate operational busywork and capture high-intent leads 24/7. We design, engineer, and deploy production-grade <strong class="text-white font-semibold">conversational AI agents</strong>, high-speed <strong class="text-white font-semibold">Groq pipelines</strong>, and automated business workflows.
             </p>
 
-            <div class="flex flex-wrap gap-1.5 pt-2">
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">n8n Webhook</span>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Groq LLM</span>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Buffer Memory</span>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Lead Scoring</span>
+            <!-- Orwell-Style Metric Strip -->
+            <div class="pt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-xs sm:text-sm text-white/80 font-medium mb-10">
+                <div class="px-4 py-2 rounded-2xl bg-[#1b5e20]/20 border border-[#1b5e20]/30 flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-[#09da05]"></i>
+                    <span>&lt;650ms Response Latency via Groq</span>
+                </div>
+                <div class="px-4 py-2 rounded-2xl bg-[#1b5e20]/20 border border-[#1b5e20]/30 flex items-center gap-2">
+                    <i class="fa-solid fa-code-branch text-[#09da05]"></i>
+                    <span>Self-Hosted n8n Enterprise Backends</span>
+                </div>
+                <div class="px-4 py-2 rounded-2xl bg-[#1b5e20]/20 border border-[#1b5e20]/30 flex items-center gap-2">
+                    <i class="fa-solid fa-language text-[#f6c500]"></i>
+                    <span>English &amp; Arabic Bilingual Intelligence</span>
+                </div>
             </div>
-          </div>
 
-          <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between gap-3">
-            <a href="https://abdulmoiz0portfolio.github.io/real-estate-chatbot/" target="_blank" class="flex-1 text-center py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
-              <span>Test PropertyBot Live</span>
-              <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>
-            <a href="https://screenrec.com/share/7SxeCZsImJ" target="_blank" title="Watch n8n Workflow Demo" class="p-2.5 rounded-xl badge-subtle hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center justify-center">
-              <i data-lucide="play" class="w-4 h-4 text-emerald-400"></i>
-            </a>
-          </div>
+            <!-- Primary CTAs -->
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#agents" class="btn-orwell-neon px-8 py-3.5 text-sm uppercase tracking-wider font-bold">
+                    <span>Test Live Agents Below</span>
+                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+                <a href="https://automatixes.com" class="btn-orwell-glass px-7 py-3.5 text-sm">
+                    <i class="fa-solid fa-globe text-[#09da05]"></i>
+                    <span>Visit Automatixes Agency</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION 1: INTERACTIVE AI AGENTS (Orwell Featured Work Style) -->
+        <section id="agents" class="py-16 sm:py-24 border-t border-[#1b5e20]/25 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#09da05] mb-2 block">Verified Proof of Work</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Featured Interactive AI Agents</h2>
+                    <p class="text-sm sm:text-base text-white/70 mt-2 font-light">Test these deployed conversational bots live right now in your browser.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Bot 1: PropertyBot -->
+                    <div class="card-orwell-dark p-7 sm:p-9 flex flex-col justify-between relative overflow-hidden group">
+                        <!-- Top Accent Glow -->
+                        <div class="absolute -top-12 -right-12 w-48 h-48 bg-[#09da05]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#09da05]/20 transition-all"></div>
+
+                        <div class="space-y-5">
+                            <div class="flex items-start justify-between">
+                                <div class="w-14 h-14 rounded-2xl bg-[#012004] border border-[#09da05]/40 flex items-center justify-center text-[#09da05] text-2xl shadow-lg shadow-[#09da05]/15">
+                                    <i class="fa-solid fa-house-chimney"></i>
+                                </div>
+                                <span class="px-3.5 py-1 rounded-full bg-[#1b5e20]/30 border border-[#09da05]/40 text-[#09da05] text-xs font-mono font-semibold flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-[#09da05] pulse-beacon"></span>
+                                    ONLINE • READY
+                                </span>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-bold text-white tracking-tight">PropertyBot — Real Estate Lead Triage</h3>
+                                <p class="text-xs text-[#09da05] font-mono mt-1 font-semibold uppercase tracking-wider">PropTech Lead Qualification Assistant</p>
+                            </div>
+
+                            <p class="text-sm text-white/80 font-light leading-relaxed">
+                                Solves the 5-minute lead drop bottleneck where 80% of property buyers churn before receiving an answer. Powered by <strong class="text-white font-medium">Groq (Llama-3)</strong> for sub-second responses with conversation memory to retain budget, location preferences, and mortgage pre-approval status.
+                            </p>
+
+                            <!-- Metric Grid -->
+                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                <div class="p-3 rounded-xl bg-[#012004]/80 border border-[#1b5e20]/30">
+                                    <div class="text-[11px] text-white/60 font-medium">Inference Speed</div>
+                                    <div class="text-base font-bold text-[#09da05] mt-0.5">&lt; 650ms</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-[#012004]/80 border border-[#1b5e20]/30">
+                                    <div class="text-[11px] text-white/60 font-medium">Memory Retention</div>
+                                    <div class="text-base font-bold text-white mt-0.5">Multi-Turn Context</div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px]">
+                                <span class="px-2.5 py-1 rounded-lg bg-[#012004] border border-[#1b5e20]/40 text-white/70">n8n Webhook</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-[#012004] border border-[#1b5e20]/40 text-white/70">Groq LLM</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-[#012004] border border-[#1b5e20]/40 text-white/70">Lead Scoring</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-8 border-t border-[#1b5e20]/30 flex items-center gap-3">
+                            <a href="https://abdulmoiz0portfolio.github.io/real-estate-chatbot/" target="_blank" class="flex-1 btn-orwell-neon py-3 text-xs sm:text-sm uppercase tracking-wider font-bold">
+                                <span>Test PropertyBot Live</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                            <a href="https://screenrec.com/share/7SxeCZsImJ" target="_blank" title="Watch n8n Workflow Walkthrough" class="p-3 rounded-2xl btn-orwell-glass flex items-center justify-center">
+                                <i class="fa-solid fa-play text-[#09da05]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Bot 2: Sultan (Saudi Hotel Concierge) -->
+                    <div class="card-orwell-dark p-7 sm:p-9 flex flex-col justify-between relative overflow-hidden group">
+                        <!-- Top Accent Glow -->
+                        <div class="absolute -top-12 -right-12 w-48 h-48 bg-[#f6c500]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#f6c500]/20 transition-all"></div>
+
+                        <div class="space-y-5">
+                            <div class="flex items-start justify-between">
+                                <div class="w-14 h-14 rounded-2xl bg-[#012004] border border-[#f6c500]/40 flex items-center justify-center text-[#f6c500] text-2xl shadow-lg shadow-[#f6c500]/15">
+                                    <i class="fa-solid fa-crown"></i>
+                                </div>
+                                <span class="px-3.5 py-1 rounded-full bg-[#1b5e20]/30 border border-[#f6c500]/40 text-[#f6c500] text-xs font-mono font-semibold flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-[#f6c500] pulse-beacon"></span>
+                                    ONLINE • READY
+                                </span>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-bold text-white tracking-tight">Sultan — Luxury Hotel AI Concierge</h3>
+                                <p class="text-xs text-[#f6c500] font-mono mt-1 font-semibold uppercase tracking-wider">Hospitality AI &amp; 3D WhatsApp Simulator</p>
+                            </div>
+
+                            <p class="text-sm text-white/80 font-light leading-relaxed">
+                                Interactive WhatsApp concierge engineered for 5-star Saudi luxury hospitality (<em class="text-white/60">The Royal Riyadh Grand Hotel</em>). Automatically handles room quotations, VIP suite matching, and booking intake in both <strong class="text-white font-medium">Arabic (🇸🇦)</strong> and <strong class="text-white font-medium">English (🇬🇧)</strong> with instant 15% VAT calculation.
+                            </p>
+
+                            <!-- Metric Grid -->
+                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                <div class="p-3 rounded-xl bg-[#012004]/80 border border-[#1b5e20]/30">
+                                    <div class="text-[11px] text-white/60 font-medium">Languages Supported</div>
+                                    <div class="text-base font-bold text-[#f6c500] mt-0.5">Arabic &amp; English</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-[#012004]/80 border border-[#1b5e20]/30">
+                                    <div class="text-[11px] text-white/60 font-medium">Financial Precision</div>
+                                    <div class="text-base font-bold text-white mt-0.5">Live 15% VAT &amp; SAR</div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px]">
+                                <span class="px-2.5 py-1 rounded-lg bg-[#012004] border border-[#1b5e20]/40 text-white/70">WhatsApp 3D UI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-[#012004] border border-[#1b5e20]/40 text-white/70">Bilingual Natural NLP</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-[#012004] border border-[#1b5e20]/40 text-white/70">VIP Concierge</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-8 border-t border-[#1b5e20]/30 flex items-center gap-3">
+                            <a href="https://abdulmoiz0portfolio.github.io/saudi-hotel-ai-concierge/" target="_blank" class="flex-1 btn-orwell-neon py-3 text-xs sm:text-sm uppercase tracking-wider font-bold" style="background: #f6c500; box-shadow: 0 0 25px rgba(246, 197, 0, 0.35);">
+                                <span>Test Hotel Concierge Live</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                            <a href="https://screenrec.com/share/rVw7BvtiDG" target="_blank" title="Watch n8n Workflow Walkthrough" class="p-3 rounded-2xl btn-orwell-glass flex items-center justify-center">
+                                <i class="fa-solid fa-play text-[#f6c500]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SCREENREC VIDEO BREAKDOWNS (Orwell Video Gallery Style) -->
+        <section id="breakdowns" class="py-16 sm:py-24 border-t border-[#1b5e20]/25 bg-[#011a03]/50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#09da05] mb-2 block">Backend Transparency</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">ScreenRec Workflow Breakdowns</h2>
+                    <p class="text-sm sm:text-base text-white/70 mt-2 font-light">60-second execution recordings showing real n8n node wiring, parameters, and live logs.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <a href="https://screenrec.com/share/7SxeCZsImJ" target="_blank" class="card-orwell-dark p-5 flex flex-col justify-between group text-decoration-none">
+                        <div>
+                            <div class="w-full aspect-video rounded-xl bg-[#012004] border border-[#1b5e20]/40 flex items-center justify-center relative overflow-hidden group-hover:border-[#09da05]/60 transition-colors">
+                                <i class="fa-regular fa-circle-play text-[#09da05] text-3xl group-hover:scale-110 transition-transform"></i>
+                                <span class="absolute bottom-2 right-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-white/80">ScreenRec</span>
+                            </div>
+                            <h4 class="text-base font-bold text-white mt-4 group-hover:text-[#09da05] transition-colors">Workflow Demo 01</h4>
+                            <p class="text-xs text-white/70 mt-1 font-light leading-relaxed">Real estate webhook execution &amp; prompt node wiring.</p>
+                        </div>
+                        <span class="text-xs text-[#09da05] font-mono font-semibold mt-4 flex items-center gap-1.5">
+                            Watch Video <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </a>
+
+                    <a href="https://screenrec.com/share/rVw7BvtiDG" target="_blank" class="card-orwell-dark p-5 flex flex-col justify-between group text-decoration-none">
+                        <div>
+                            <div class="w-full aspect-video rounded-xl bg-[#012004] border border-[#1b5e20]/40 flex items-center justify-center relative overflow-hidden group-hover:border-[#09da05]/60 transition-colors">
+                                <i class="fa-regular fa-circle-play text-[#09da05] text-3xl group-hover:scale-110 transition-transform"></i>
+                                <span class="absolute bottom-2 right-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-white/80">ScreenRec</span>
+                            </div>
+                            <h4 class="text-base font-bold text-white mt-4 group-hover:text-[#09da05] transition-colors">Workflow Demo 02</h4>
+                            <p class="text-xs text-white/70 mt-1 font-light leading-relaxed">WhatsApp concierge simulator data pass &amp; response loop.</p>
+                        </div>
+                        <span class="text-xs text-[#09da05] font-mono font-semibold mt-4 flex items-center gap-1.5">
+                            Watch Video <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </a>
+
+                    <a href="https://screenrec.com/share/H3MrkEeiYR" target="_blank" class="card-orwell-dark p-5 flex flex-col justify-between group text-decoration-none">
+                        <div>
+                            <div class="w-full aspect-video rounded-xl bg-[#012004] border border-[#1b5e20]/40 flex items-center justify-center relative overflow-hidden group-hover:border-[#09da05]/60 transition-colors">
+                                <i class="fa-regular fa-circle-play text-[#09da05] text-3xl group-hover:scale-110 transition-transform"></i>
+                                <span class="absolute bottom-2 right-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-white/80">ScreenRec</span>
+                            </div>
+                            <h4 class="text-base font-bold text-white mt-4 group-hover:text-[#09da05] transition-colors">Workflow Demo 03</h4>
+                            <p class="text-xs text-white/70 mt-1 font-light leading-relaxed">Buffer memory configuration &amp; context persistence.</p>
+                        </div>
+                        <span class="text-xs text-[#09da05] font-mono font-semibold mt-4 flex items-center gap-1.5">
+                            Watch Video <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </a>
+
+                    <a href="https://screenrec.com/share/Mkr5vTI96E" target="_blank" class="card-orwell-dark p-5 flex flex-col justify-between group text-decoration-none">
+                        <div>
+                            <div class="w-full aspect-video rounded-xl bg-[#012004] border border-[#1b5e20]/40 flex items-center justify-center relative overflow-hidden group-hover:border-[#09da05]/60 transition-colors">
+                                <i class="fa-regular fa-circle-play text-[#09da05] text-3xl group-hover:scale-110 transition-transform"></i>
+                                <span class="absolute bottom-2 right-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-white/80">ScreenRec</span>
+                            </div>
+                            <h4 class="text-base font-bold text-white mt-4 group-hover:text-[#09da05] transition-colors">Workflow Demo 04</h4>
+                            <p class="text-xs text-white/70 mt-1 font-light leading-relaxed">End-to-end execution test &amp; verified lead output.</p>
+                        </div>
+                        <span class="text-xs text-[#09da05] font-mono font-semibold mt-4 flex items-center gap-1.5">
+                            Watch Video <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SAAS TOOLS (Tactile Frosted Card Style) -->
+        <section id="tools" class="py-16 sm:py-24 border-t border-[#1b5e20]/25 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#09da05] mb-2 block">Live Production Products</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Client-Side SaaS Utilities</h2>
+                    <p class="text-sm sm:text-base text-white/70 mt-2 font-light">Zero server latency tools deployed under the Automatixes ecosystem.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                    
+                    <!-- Tool 1 -->
+                    <a href="https://upscaler.automatixes.com" target="_blank" class="card-orwell-dark p-7 flex flex-col justify-between group text-decoration-none">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-[#012004] border border-[#09da05]/30 flex items-center justify-center text-[#09da05] text-xl mb-5 shadow-lg shadow-[#09da05]/10">
+                                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-[#09da05] transition-colors">AutomatixUpscale</h3>
+                            <p class="text-xs text-white/70 font-light mt-2 leading-relaxed">
+                                Client-side AI super-resolution enhancing images to 4K/8K. Operates directly in-browser with zero server data storage.
+                            </p>
+                        </div>
+                        <span class="text-xs text-[#09da05] font-mono font-semibold mt-6 flex items-center gap-1">
+                            upscaler.automatixes.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </span>
+                    </a>
+
+                    <!-- Tool 2 -->
+                    <a href="https://invoicemaker.automatixes.com" target="_blank" class="card-orwell-dark p-7 flex flex-col justify-between group text-decoration-none">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-[#012004] border border-[#09da05]/30 flex items-center justify-center text-[#09da05] text-xl mb-5 shadow-lg shadow-[#09da05]/10">
+                                <i class="fa-solid fa-receipt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-[#09da05] transition-colors">AutomatixInvoice</h3>
+                            <p class="text-xs text-white/70 font-light mt-2 leading-relaxed">
+                                Financial invoicing tool with 50+ currency presets, dynamic QR payment embedding, and instant A4 PDF export.
+                            </p>
+                        </div>
+                        <span class="text-xs text-[#09da05] font-mono font-semibold mt-6 flex items-center gap-1">
+                            invoicemaker.automatixes.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </span>
+                    </a>
+
+                    <!-- Tool 3 -->
+                    <a href="https://qrcode.automatixes.com" target="_blank" class="card-orwell-dark p-7 flex flex-col justify-between group text-decoration-none">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-[#012004] border border-[#09da05]/30 flex items-center justify-center text-[#09da05] text-xl mb-5 shadow-lg shadow-[#09da05]/10">
+                                <i class="fa-solid fa-qrcode"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-[#09da05] transition-colors">AutomatixQR</h3>
+                            <p class="text-xs text-white/70 font-light mt-2 leading-relaxed">
+                                Vector dynamic QR studio with custom brand logo watermarks, live scan analytics, and 8 international languages.
+                            </p>
+                        </div>
+                        <span class="text-xs text-[#09da05] font-mono font-semibold mt-6 flex items-center gap-1">
+                            qrcode.automatixes.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FOUNDER & BRAND PROMISE (Orwell "Person Behind The Strategy" Style) -->
+        <section id="about" class="py-16 sm:py-24 border-t border-[#1b5e20]/25 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                
+                <div class="card-orwell-dark p-8 sm:p-12 relative overflow-hidden">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8 pb-8 border-b border-[#1b5e20]/30">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#09da05] to-[#1b5e20] p-0.5 shadow-xl shadow-[#09da05]/20 flex items-center justify-center">
+                                <div class="w-full h-full bg-[#012004] rounded-[22px] flex items-center justify-center text-white text-xl font-extrabold">
+                                    MB
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Abdul Moiz Baig</h3>
+                                <p class="text-sm text-[#09da05] font-mono">Founder, Automatixes • AI Systems Architect</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <a href="https://www.linkedin.com/in/a-moiz-baig/" target="_blank" class="btn-orwell-glass px-4 py-2 text-xs font-semibold">
+                                <i class="fa-brands fa-linkedin text-[#09da05]"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/abdulmoiz0portfolio" target="_blank" class="btn-orwell-glass px-4 py-2 text-xs font-semibold">
+                                <i class="fa-brands fa-github text-[#09da05]"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-2xl bg-[#012004]/80 border border-[#1b5e20]/30">
+                            <div class="flex items-center gap-2.5 text-[#09da05] font-bold text-base mb-2">
+                                <i class="fa-solid fa-check-double"></i>
+                                <span>Quality Over Shortcuts</span>
+                            </div>
+                            <p class="text-xs text-white/70 font-light leading-relaxed">
+                                Every bot, webhook, and n8n node is architected with strict fallback logic, zero-hallucination guardrails, and real-time execution monitoring.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-[#012004]/80 border border-[#1b5e20]/30">
+                            <div class="flex items-center gap-2.5 text-[#09da05] font-bold text-base mb-2">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>Conversion &amp; Speed Focused</span>
+                            </div>
+                            <p class="text-xs text-white/70 font-light leading-relaxed">
+                                AI agents built not just for novelty, but to directly accelerate lead triage speed, reduce human payroll overhead, and drive bottom-line revenue.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA SECTION (Orwell Inspired Grand Closer) -->
+        <section class="py-20 text-center border-t border-[#1b5e20]/25 relative bg-[#011a03]">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 space-y-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#09da05] block">Ready to Scale Your Operations?</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Let’s Build Something Intelligent Together.
+                </h2>
+                <p class="text-sm sm:text-base text-white/70 font-light leading-relaxed">
+                    Whether you need conversational AI customer triage, automated voice agents, or autonomous n8n workflows—let’s talk.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                    <a href="https://wa.me/923366920141" target="_blank" class="btn-orwell-neon px-8 py-3.5 text-sm uppercase tracking-wider font-bold">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                    <a href="mailto:contact@automatixes.com" class="btn-orwell-glass px-7 py-3.5 text-sm">
+                        <i class="fa-solid fa-envelope text-[#09da05]"></i>
+                        <span>contact@automatixes.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#1b5e20]/30 bg-[#011603] py-8 text-center text-xs text-white/50 font-mono">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span>&copy; 2026 Automatixes • Abdul Moiz Baig</span>
+            <div class="flex items-center gap-5">
+                <a href="https://automatixes.com" class="text-white/60 hover:text-[#09da05] transition-colors text-decoration-none">automatixes.com</a>
+                <a href="https://www.linkedin.com/in/a-moiz-baig/" target="_blank" class="text-white/60 hover:text-[#09da05] transition-colors text-decoration-none">LinkedIn</a>
+                <a href="https://github.com/abdulmoiz0portfolio" target="_blank" class="text-white/60 hover:text-[#09da05] transition-colors text-decoration-none">GitHub</a>
+            </div>
         </div>
+    </footer>
 
-        <!-- Bot 2: Saudi Luxury Hotel AI Concierge -->
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-7 backdrop-blur-sm transition-all duration-300 glow-cyan flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex items-start justify-between">
-              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-                <i data-lucide="crown" class="w-6 h-6"></i>
-              </div>
-              <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[11px] font-mono font-medium flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                Live & Active
-              </span>
-            </div>
-
-            <div>
-              <h3 class="text-lg sm:text-xl font-bold text-white">Sultan — Luxury Hotel AI Concierge</h3>
-              <p class="text-xs text-cyan-400 font-mono mt-0.5">Hospitality AI & WhatsApp Simulator</p>
-            </div>
-
-            <p class="text-sm text-slate-300 font-light leading-relaxed">
-              Interactive 3D WhatsApp concierge tailored for 5-star Saudi hospitality (<em class="text-slate-400">The Royal Riyadh Grand Hotel</em>). Handles room quotes, VIP suite recommendations, and booking intake in both <strong class="text-white font-medium">Arabic (🇸🇦)</strong> and <strong class="text-white font-medium">English (🇬🇧)</strong> with live 15% VAT calculation.
-            </p>
-
-            <div class="flex flex-wrap gap-1.5 pt-2">
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Arabic & English</span>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">WhatsApp UI</span>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">SAR & VAT Calc</span>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">VIP Intake</span>
-            </div>
-          </div>
-
-          <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between gap-3">
-            <a href="https://abdulmoiz0portfolio.github.io/saudi-hotel-ai-concierge/" target="_blank" class="flex-1 text-center py-2.5 px-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
-              <span>Test Hotel Concierge Live</span>
-              <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>
-            <a href="https://screenrec.com/share/rVw7BvtiDG" target="_blank" title="Watch n8n Workflow Demo" class="p-2.5 rounded-xl badge-subtle hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center justify-center">
-              <i data-lucide="play" class="w-4 h-4 text-cyan-400"></i>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Section 2: ScreenRec Video Walkthroughs (Proof of Backend) -->
-    <div class="mt-16 sm:mt-24 space-y-6">
-      <div class="border-b border-slate-800 pb-4">
-        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2.5">
-          <i data-lucide="video" class="w-6 h-6 text-amber-400"></i>
-          ScreenRec Workflow Breakdowns
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-400 mt-1">60-second raw screen recordings showing real n8n nodes, canvas configurations, and execution logs.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        <a href="https://screenrec.com/share/7SxeCZsImJ" target="_blank" class="rounded-xl border border-slate-800 bg-slate-900/40 p-4 hover:border-slate-700 hover:bg-slate-900/80 transition-all group flex flex-col justify-between">
-          <div>
-            <div class="w-full aspect-video rounded-lg bg-slate-950 flex items-center justify-center border border-slate-800 group-hover:border-emerald-500/50 transition-colors relative overflow-hidden">
-              <i data-lucide="play-circle" class="w-8 h-8 text-emerald-400 group-hover:scale-110 transition-transform"></i>
-              <span class="absolute bottom-2 right-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-900/90 text-slate-300">ScreenRec</span>
-            </div>
-            <h4 class="text-sm font-semibold text-white mt-3 group-hover:text-emerald-400 transition-colors">Workflow Demo 01</h4>
-            <p class="text-xs text-slate-400 mt-1">Real estate webhook execution & prompt node wiring.</p>
-          </div>
-          <span class="text-xs text-emerald-400 font-mono mt-3 flex items-center gap-1">Watch Video <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
-        </a>
-
-        <a href="https://screenrec.com/share/rVw7BvtiDG" target="_blank" class="rounded-xl border border-slate-800 bg-slate-900/40 p-4 hover:border-slate-700 hover:bg-slate-900/80 transition-all group flex flex-col justify-between">
-          <div>
-            <div class="w-full aspect-video rounded-lg bg-slate-950 flex items-center justify-center border border-slate-800 group-hover:border-cyan-500/50 transition-colors relative overflow-hidden">
-              <i data-lucide="play-circle" class="w-8 h-8 text-cyan-400 group-hover:scale-110 transition-transform"></i>
-              <span class="absolute bottom-2 right-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-900/90 text-slate-300">ScreenRec</span>
-            </div>
-            <h4 class="text-sm font-semibold text-white mt-3 group-hover:text-cyan-400 transition-colors">Workflow Demo 02</h4>
-            <p class="text-xs text-slate-400 mt-1">WhatsApp concierge simulator data pass & response loop.</p>
-          </div>
-          <span class="text-xs text-cyan-400 font-mono mt-3 flex items-center gap-1">Watch Video <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
-        </a>
-
-        <a href="https://screenrec.com/share/H3MrkEeiYR" target="_blank" class="rounded-xl border border-slate-800 bg-slate-900/40 p-4 hover:border-slate-700 hover:bg-slate-900/80 transition-all group flex flex-col justify-between">
-          <div>
-            <div class="w-full aspect-video rounded-lg bg-slate-950 flex items-center justify-center border border-slate-800 group-hover:border-amber-500/50 transition-colors relative overflow-hidden">
-              <i data-lucide="play-circle" class="w-8 h-8 text-amber-400 group-hover:scale-110 transition-transform"></i>
-              <span class="absolute bottom-2 right-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-900/90 text-slate-300">ScreenRec</span>
-            </div>
-            <h4 class="text-sm font-semibold text-white mt-3 group-hover:text-amber-400 transition-colors">Workflow Demo 03</h4>
-            <p class="text-xs text-slate-400 mt-1">Buffer memory configuration & context persistence.</p>
-          </div>
-          <span class="text-xs text-amber-400 font-mono mt-3 flex items-center gap-1">Watch Video <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
-        </a>
-
-        <a href="https://screenrec.com/share/Mkr5vTI96E" target="_blank" class="rounded-xl border border-slate-800 bg-slate-900/40 p-4 hover:border-slate-700 hover:bg-slate-900/80 transition-all group flex flex-col justify-between">
-          <div>
-            <div class="w-full aspect-video rounded-lg bg-slate-950 flex items-center justify-center border border-slate-800 group-hover:border-purple-500/50 transition-colors relative overflow-hidden">
-              <i data-lucide="play-circle" class="w-8 h-8 text-purple-400 group-hover:scale-110 transition-transform"></i>
-              <span class="absolute bottom-2 right-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-900/90 text-slate-300">ScreenRec</span>
-            </div>
-            <h4 class="text-sm font-semibold text-white mt-3 group-hover:text-purple-400 transition-colors">Workflow Demo 04</h4>
-            <p class="text-xs text-slate-400 mt-1">End-to-end execution test & verified lead output.</p>
-          </div>
-          <span class="text-xs text-purple-400 font-mono mt-3 flex items-center gap-1">Watch Video <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- Section 3: Live SaaS Production Tools -->
-    <div class="mt-16 sm:mt-24 space-y-6">
-      <div class="border-b border-slate-800 pb-4">
-        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2.5">
-          <i data-lucide="box" class="w-6 h-6 text-cyan-400"></i>
-          Deployed SaaS Production Utilities
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-400 mt-1">Client-side web applications built and running in production under the Automatixes ecosystem.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <a href="https://upscaler.automatixes.com/" target="_blank" class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 hover:border-emerald-500/50 transition-all group flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
-              <i data-lucide="maximize-2" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">AutomatixUpscale</h3>
-            <p class="text-xs text-slate-400 font-light mt-1.5 leading-relaxed">
-              Browser-based AI image super-resolution to 4K/8K. Operates directly client-side without storing user images on external servers.
-            </p>
-          </div>
-          <span class="text-xs text-emerald-400 font-mono mt-4 flex items-center gap-1">upscaler.automatixes.com <i data-lucide="external-link" class="w-3 h-3"></i></span>
-        </a>
-
-        <a href="https://invoicemaker.automatixes.com/" target="_blank" class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 hover:border-cyan-500/50 transition-all group flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
-              <i data-lucide="receipt" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">AutomatixInvoice</h3>
-            <p class="text-xs text-slate-400 font-light mt-1.5 leading-relaxed">
-              Financial invoicing generator with 50+ currency presets, dynamic QR payment embedding, and instant A4 PDF export.
-            </p>
-          </div>
-          <span class="text-xs text-cyan-400 font-mono mt-4 flex items-center gap-1">invoicemaker.automatixes.com <i data-lucide="external-link" class="w-3 h-3"></i></span>
-        </a>
-
-        <a href="https://qrcode.automatixes.com/" target="_blank" class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 hover:border-amber-500/50 transition-all group flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
-              <i data-lucide="qr-code" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors">AutomatixQR</h3>
-            <p class="text-xs text-slate-400 font-light mt-1.5 leading-relaxed">
-              Vector QR code studio with custom logo embedding, dynamic URL routing, scan analytics, and 8 international languages.
-            </p>
-          </div>
-          <span class="text-xs text-amber-400 font-mono mt-4 flex items-center gap-1">qrcode.automatixes.com <i data-lucide="external-link" class="w-3 h-3"></i></span>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- Contact / CTA Footer Banner -->
-    <div class="mt-16 sm:mt-24 rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/80 to-slate-950 p-8 sm:p-12 text-center space-y-5">
-      <h3 class="text-2xl sm:text-3xl font-bold text-white">Let’s build something intelligent.</h3>
-      <p class="text-sm text-slate-400 max-w-xl mx-auto font-light leading-relaxed">
-        Whether you need high-conversion AI conversational agents, autonomous B2B workflows, or custom AI tooling—I ship verified production systems.
-      </p>
-      
-      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-        <a href="https://www.linkedin.com/in/a-moiz-baig/" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs transition-all flex items-center gap-2">
-          <i data-lucide="linkedin" class="w-4 h-4 text-[#0a66c2]"></i>
-          <span>Connect on LinkedIn</span>
-        </a>
-        <a href="https://automatixes.com/" target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20">
-          <i data-lucide="globe" class="w-4 h-4"></i>
-          <span>Visit Automatixes</span>
-        </a>
-      </div>
-      
-      <p class="text-xs text-slate-500 font-mono pt-4">Abdul Moiz Baig • contact@automatixes.com</p>
-    </div>
-
-  </main>
-
-  <script>
-    lucide.createIcons();
-  </script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
