@@ -1,6 +1,6 @@
 # 🤖 Production AI Agents & Autonomous Pipelines — Portfolio Showcase
 > **Curated by Abdul Moiz Baig** | Founder, [Automatixes](https://automatixes.com/)  
-> *"Show me your work, not your CV."*
+> *Production AI Conversational Bots, High-Speed Groq Workflows & Deployed Micro-SaaS*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/a-moiz-baig/)
 [![Website](https://img.shields.io/badge/Automatixes-10b981?style=for-the-badge&logo=google-chrome&logoColor=white)](https://automatixes.com/)
